@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Horas {
+public class cubo {
      public static void main(String[] args) {
         //variáveis
         Scanner entrada;
