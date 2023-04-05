@@ -4,7 +4,7 @@ public class Caixa {
     public static void main(String[] args) {
        //variáveis
        Scanner entrada;
-       int valor_sacar, n100, n50, n20, n10, n5, n2, sobra;
+       int valor_sacar, n100, n50, n20, n10,n5,n2, sobra;
        
        //entradas
        entrada = new Scanner(System.in);
