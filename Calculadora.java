@@ -5,7 +5,7 @@ public class Calculadora {
         //variáveis
         Scanner entrada;        
         int a, b;
-        char operador;
+        String operador;
         float resultado;
         
         //entradas
@@ -13,8 +13,8 @@ public class Calculadora {
         System.out.println(" Digite dois valores ");
         a = entrada.nextInt();
         b = entrada.nextInt();
-        System.out.println(" Escolha o operador + - * / ");
-        operador = entrada.nextLine().charAt(4);
+        System.out.println(" Escolha o operador (+ - * / ):");
+        operador = entrada.next();
 
 
         
@@ -24,26 +24,36 @@ public class Calculadora {
 
         //processamento
         // "e" em java é && e "ou" é || print de booleano é %b, o "não" em java é "!""
+
         if(operador .equals("+")){
             resultado = a + b;
-            System.out.printf("resultado %d \n",resultado);
+            System.out.printf("resultado %.2f \n",resultado);
         }else{
             if(operador .equals("-")){
                 resultado = a - b;
-                System.out.printf("resultado %d \n",resultado);
+                System.out.printf("resultado %.2f \n",resultado);
             }else{
                 if(operador .equals("*")){
                     resultado = a * b;
-                    System.out.printf("resultado %d \n",resultado);
+                    System.out.printf("resultado %.2f \n",resultado);
                 }else{
                 resultado = a / b;    
-                System.out.printf("resultado %d \n",resultado);
+                System.out.printf("resultado %.2f \n",resultado);
                 }
+        
+
             }
-
+            
         }
+        //essa também é uma forma válida
+        //if(!operador .equals("+") &&  !operador .equals("-") &&  !operador .equals("*") && !operador .equals("/")){
+           // System.out.printf("operador inválido \n");
 
+        //}
+        if(!(operador .equals("+") ||  operador .equals("-") || operador .equals("*") || operador .equals("/"))){
+            System.out.printf("operador inválido \n");
+        }
     
-}
+    }
 }
 
