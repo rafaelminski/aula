@@ -24,15 +24,15 @@ public class Olimpiada {
 
         if(d >= 0 && d<=800 ){
             d = 1;
-            System.out.printf("resultado %d \n",d);
+            System.out.printf("pontos %d \n",d);
         }else{
             if(d > 800 && d <= 1400){
                 d = 2;
-                System.out.printf("resultado %d \n",d);
+                System.out.printf("pontos  %d \n",d);
             }else{
                 if(d > 1400 && d <=2000);
                 d = 3;
-                System.out.printf("resultado %d \n",d);
+                System.out.printf(" pontos: %d \n",d);
             }
             }
             

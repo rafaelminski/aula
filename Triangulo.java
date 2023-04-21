@@ -24,7 +24,7 @@ public class Triangulo {
              //  System.out.println("forma triângulo");
            // }
 
-            if(a<= b+c && b<= c+a && c<= a+b){
+            if(a < b+c && b < c+a && c < a+b){
                 System.out.println(" forma triângulo");
                  }else{
                     System.out.println(" não forma triângulo");
