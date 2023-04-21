@@ -10,10 +10,10 @@ public class Caixa {
        entrada = new Scanner(System.in);
        System.out.println("valor a ser sacado:");
        valor_sacar = entrada.nextInt();
-      
-       
+            
        
        entrada.close();
+
        //processamento
        n100 = valor_sacar/100;
        sobra = valor_sacar%100;
@@ -34,12 +34,10 @@ public class Caixa {
             System.out.printf("notas de : R$ 20,00 %d  \n", n20);
             System.out.printf("notas de : R$ 10,00 %d  \n", n10);
             System.out.printf("notas de : R$ 5,00 %d  \n", n5);
-            System.out.printf("notas de : R$ 2,00 %d  \n", n2);
-
-            
-        }else{
-        System.out.println("valor inválido");
-        }
+            System.out.printf("notas de : R$ 2,00 %d  \n", n2);            
+            }else{
+                System.out.println("o valor digitado é inválido");
+            }
        
        
 
