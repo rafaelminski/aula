@@ -26,15 +26,16 @@ public class Caixa {
        n5 = sobra/5;
        sobra = sobra%5;
        n2 = sobra/2;
-       sobra = sobra%2;
+       
        //saída
-        if(sobra%2 == 0){
+      
+        if(sobra%2  == 0){
             System.out.printf("notas de : R$ 100,00 %d  \n", n100);
             System.out.printf("notas de : R$ 50,00 %d  \n", n50);
             System.out.printf("notas de : R$ 20,00 %d  \n", n20);
             System.out.printf("notas de : R$ 10,00 %d  \n", n10);
             System.out.printf("notas de : R$ 5,00 %d  \n", n5);
-            System.out.printf("notas de : R$ 2,00 %d  \n", n2);            
+            System.out.printf("notas de : R$ 2,00 %d  \n", n2);  
             }else{
                 System.out.println("o valor digitado é inválido");
             }
