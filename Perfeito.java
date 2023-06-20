@@ -1,30 +1,36 @@
 import java.util.Scanner;
 
 public class Perfeito {
-    public static void main(String[] args){
-        //variaveis
-        Scanner entrada;
-        int x, n_div, i, soma, acm;
-        //entradas
-        entrada = new Scanner(System.in);
-        System.out.println("Entre com um valor");
-        x = entrada.nextInt();
-        entrada.close();
-        //processamento
-        soma= 0;
-        acm=0;
+    static  Scanner sc = new Scanner(System.in);
+    
+    public static boolean ehperfeito(){
+        int x, i , acm;
+        x = sc.nextInt();
+        acm = 0;
         for(i=1;i<x;i++){
-            if(x%i == 0 ){
-                acm=acm+i;
-                //n_div = i;
-                //soma = n_div + n_div; 
-                
+            if(x%i == 0){
+                acm=acm +i;
+                System.out.println();
             }
         }
         if(acm==x){
-            System.out.println("É perfeito");
+            System.out.printf( " %d É perfeito",x);
         }else{
-            System.out.println("Não é perfeito");
+            System.out.printf("%d Não é perfeito",x);
         }
+        return ehperfeito();
+    }
+
+
+
+
+    public static void main(String[] args){
+    
+        
+        System.out.println("Entre com um valor");
+         ehperfeito();
+        
+        
+       
 }
 }
