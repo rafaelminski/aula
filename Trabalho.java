@@ -130,13 +130,6 @@ public class Trabalho {
                     }
                     return;
                 }
-
-                while (soma > numero) {
-                    if (ehPrimo(numeroAtual)) {
-                        soma -= numeroAtual;
-                    }
-                    numeroAtual++;
-                }
             }
             numeroAtual++;
         }
