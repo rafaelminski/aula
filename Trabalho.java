@@ -115,7 +115,7 @@ public class Trabalho {
         int soma = 0;
         int numeroAtual = 2;
 
-        while (numeroAtual <= numero) {
+        while (numeroAtual < numero) {
             if (ehPrimo(numeroAtual)) {
                 soma += numeroAtual;
 
