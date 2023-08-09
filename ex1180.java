@@ -7,6 +7,8 @@ import java.util.Scanner;
  *      El nombre de la clase debe ser "Main" para que su solución ejecutar
  */
 public class ex1180 {
+
+    
  
     public static void main(String[] args) throws IOException {
  
