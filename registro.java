@@ -8,57 +8,64 @@ class Produto{
     int lote;
     float peso;
 }
-class Cartao{
+
+class Cartao {
     String nome;
-    String num_card;
-    int ag;
-
-}
-class Pessoa{
-    String nome, data_nasc, email;
-
+    String numero;
+    String bandeira;
+    int cvv;
+    int vencimento_mes;
+    int vencimento_ano;
 }
 
+public class registro {
+    public static Scanner teclado = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        int numeroClients = 1;
 
+        Cartao[] cartoes = new Cartao[numeroClients];
+        for (int i = 0; i < cartoes.length; i++) {
+            System.out.println("## cliente numero " + i);
+            cartoes[i] = registroPreencherCartao();
+        }
 
+        for (int i = 0; i < cartoes.length; i++) {
+            System.out.println("## cliente numero" + i);
+            registroCartaoPrint(cartoes[i]);
+        }
 
+    }
 
-public class registro{
-    static Scanner sc ;
-public static void registroCartaoPreenche(Cartao card_1){
-    sc =new Scanner(System.in);
-    card_1 =new Cartao();
-      System.out.println("digite o nome do cartão:");
-        card_1.nome = sc.nextLine();
-    System.out.println("digite o número do cartão:");
-        card_1.num_card = sc.nextLine();
-    System.out.println("digite a agencia:");
-        card_1.ag = sc.nextInt();
+    public static void registroCartaoPrint(Cartao cartao) {
+        System.out.println("nome                 :" + cartao.nome);
+        System.out.println("numero:     " + cartao.numero);
+        System.out.println("bandeira:     " + cartao.bandeira);
+        System.out.println("cvv     :" + cartao.cvv);
+        System.out.println("mes/ano     " + cartao.vencimento_mes + "/" + cartao.vencimento_ano);
+
+    }
+
+    public static Cartao registroPreencherCartao() {
+        Cartao c = new Cartao();
+
+        System.out.println("dados do cartao");
+        System.out.print("nome: ");
+        c.nome = teclado.nextLine();
+        System.out.print("numero: ");
+        c.numero = teclado.nextLine();
+        System.out.print("bandeira: ");
+        c.bandeira = teclado.nextLine();
+        System.out.println("cvv: ");
+        c.cvv = teclado.nextInt();
+        System.out.println("mes e ano de vencimento(separados por espço)");
+        c.vencimento_mes = teclado.nextInt();
+        c.vencimento_ano = teclado.nextInt();
+
+        return c;
+    }
 }
-public static void registroCartaoPrint(Cartao card_1){
-    System.out.println("nome:"+card_1.nome);
-    System.out.println("número:"+card_1.num_card);
-    System.out.println("agência:"+card_1.ag);
-}
 
-
-    public static void main(String[]args){
-        //variáveis
-       Pessoa humano_1 = new Pessoa();
-        System.out.println("nome:");
-        humano_1.nome = sc.nextLine();
-        System.out.println("Data de nascimento");
-        humano_1.data_nasc = sc.nextLine();
-        System.out.println("E-mail:");
-        humano_1.email = sc.nextLine();
-
-        System.out.println("nome:"+humano_1.nome);
-        System.out.println("data nascimento:"+humano_1.data_nasc);
-        System.out.println("email:"+humano_1.email);
-
-        
-        
 
         //entradas
   
