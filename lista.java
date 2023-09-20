@@ -14,7 +14,7 @@ public class lista {
 
         valores = new LinkedList<Integer>();
 
-       *valores.add(10);
+        valores.add(10);
         valores.add(20);
         valores.add(30);
         valores.add(40);
