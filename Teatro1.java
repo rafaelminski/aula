@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Teatro1 {
-    // declaração de variáveis globais
+    // declaração de variáveis globais e a matriz
     public static double valorIngresso = 50.00;
     public static char[][] mapaAssentos = new char[15][10]; // Filas x Colunas
     public static int lugaresLivres = 150;
@@ -58,7 +58,8 @@ public class Teatro1 {
             System.out.println("1. Visualizar Mapa de Assentos");
             System.out.println("2. Realizar Reserva");
             System.out.println("3. Cancelar Reserva");
-            System.out.println("4. Voltar ao Menu Principal");
+            System.out.println("4. Confirmar ocupação");
+            System.out.println("5. Voltar ao Menu Principal");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
 
@@ -73,6 +74,9 @@ public class Teatro1 {
                     cancelarReserva(scanner);
                     break;
                 case 4:
+                    realizarOcupacao(scanner); 
+                    break;   
+                case 5:
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
@@ -87,7 +91,10 @@ public class Teatro1 {
             for (int j = 0; j < mapaAssentos[i].length; j++) {
                 if (mapaAssentos[i][j] == 'R') {
                     System.out.print("R ");
-                } else {
+                }else if (mapaAssentos[i][j] == 'X') {
+                    System.out.print("X ");
+                }
+                 else {
                     System.out.print("_ ");
                 }
             }
@@ -121,7 +128,36 @@ public class Teatro1 {
             System.out.println("Este assento já está reservado ou ocupado.");
             return;
         }
+        mapaAssentos[fila - 1][coluna - 1] = 'R';
+        lugaresReservados++;
+        //lugaresConfirmados++;
+        lugaresLivres--;
+        System.out.println("Reserva realizada com sucesso.");
 
+       
+
+
+    }
+    public static void realizarOcupacao(Scanner scanner){
+        System.out.print("Fila (1-15): ");
+        int fila = scanner.nextInt();
+        System.out.print("Coluna (1-10): ");
+        int coluna = scanner.nextInt();
+
+        if (fila < 1 || fila > 15 || coluna < 1 || coluna > 10) {
+            System.out.println("Assento inválido. Tente novamente.");
+            return;
+        }
+        if (mapaAssentos[fila - 1][coluna - 1] != 'R' && mapaAssentos[fila - 1][coluna - 1] != 'X') {
+            // Assento está livre, pode prosseguir com a ocupação
+        } else {
+            System.out.println("Este assento já está reservado ou ocupado.");
+            return;
+        }
+        mapaAssentos[fila - 1][coluna - 1] = 'X';
+        
+        lugaresConfirmados++;
+        lugaresLivres--;
         System.out.print("O cliente é estudante? (S/N): ");
         char resposta = scanner.next().charAt(0);
 
@@ -131,12 +167,8 @@ public class Teatro1 {
         } else {
             valorTotalArrecadado += valorIngresso;
         }
-
-        mapaAssentos[fila - 1][coluna - 1] = 'R';
-        lugaresReservados++;
-        lugaresConfirmados++;
-        lugaresLivres--;
-        System.out.println("Reserva realizada com sucesso.");
+        
+        System.out.println("Lugar ocupado com sucesso .");
     }
 
     public static void cancelarReserva(Scanner scanner) {

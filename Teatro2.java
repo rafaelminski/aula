@@ -38,6 +38,13 @@ public class Teatro2 {
         }
     }
 
+    else if(mapaAssentos[i][j] == 'X'){
+        System.out.println("X ");
+    }else {
+        System.out.print("_ ");
+    }
+
+
     private static void inicializarMapaAssentos() {
         // Inicialize o mapa de assentos com os dados fornecidos
         // Este é um exemplo com base no mapa fornecido
