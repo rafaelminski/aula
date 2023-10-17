@@ -6,7 +6,7 @@ public class pilha {
          // Stack <Integer> pilha = new Stack<Integer>();
        // int x;
        
-        String expressão = "[](}{})";
+        String expressão = "[ ]( }{ } )";
         Stack<Character> pilha = new Stack<Character>();
         
         int i;
@@ -23,7 +23,7 @@ public class pilha {
                     if (pilha.isEmpty()) {
                         erro = true;
                     } else {
-                        if (pilha.pop() != '(') {
+                        if (pilha.pop() != '(' ) {
                             erro = true;
                         }
                     }
@@ -35,7 +35,7 @@ public class pilha {
                     if (pilha.isEmpty()) {
                         erro = true;
                     } else {
-                        if (pilha.pop() != '(') {
+                        if (pilha.pop() != '(' ) {
                             erro = true;
                         }
                     }
@@ -47,14 +47,14 @@ public class pilha {
                     if (pilha.isEmpty()) {
                         erro = true;
                     } else {
-                        if (pilha.pop() != '(') {
+                        if (pilha.pop() != '(' ) {
                             erro = true;
                         }
                     }
                     break;    
                     
             }
-            if(erro){
+            if( erro ){
                 break;
             }
         }
