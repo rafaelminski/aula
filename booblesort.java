@@ -6,6 +6,54 @@ public class booblesort {
         vetor[pos_a] = aux;
     }
 
+    public static int [] merge (int [] val_a, int val_b){
+        int [] res = new int [val_a.length+val_b.length];
+        if(val_a.length==0) return val_b;
+        if(val_b.length==0) return val_a;
+        int i=0, j=0, k=0;
+        for(k=0;k<res.length;k++){
+            if(i<val_a.length&&j<val_b.length){
+                if(val_a[i]<val_b[j]){
+                    res[k]=val_a[i];
+                    i++;
+                }else{
+                    res[k]= val_b[j];
+                    j++;
+                }
+            }else{
+                if(i>=val_a.length){
+                    res[k]=val_b[j];
+                    j++;
+                }
+                else{
+                    res[k]=val_a[i];
+                    i++;
+                
+                }
+            }
+        }
+        }
+    
+
+
+
+
+    public static void selection_sort(int[] valores){
+        int i,j,menor_val=0, menor_pos=0;
+        for (i = 0;i<valores.length;i++){
+            for(j=i;j<valores.length;j++){
+                if(valores[j]<menor_val){
+                    menor_val= valores[j];
+                    menor_pos = j;
+                
+                }
+            }
+            troca(valores,i,menor_pos);
+        }
+    }
+
+
+
     public static void insetion_sort (int [] valores){
         int i, j;
         if(valores.length > 1){
