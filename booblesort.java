@@ -6,12 +6,16 @@ public class booblesort {
         vetor[pos_a] = aux;
     }
 
-    public static int [] merge (int [] val_a, int val_b){
+    public static int [] merge ( int [] val_a, int [] val_b ) { 
+
         int [] res = new int [val_a.length+val_b.length];
         if(val_a.length==0) return val_b;
         if(val_b.length==0) return val_a;
-        int i=0, j=0, k=0;
-        for(k=0;k<res.length;k++){
+        int i=0, j=0, k=0, tam;
+        tam = val_a.length + val_b.length;
+        while (k<tam) {
+            
+        
             if(i<val_a.length&&j<val_b.length){
                 if(val_a[i]<val_b[j]){
                     res[k]=val_a[i];
@@ -31,9 +35,49 @@ public class booblesort {
                 
                 }
             }
+            k++;
         }
+        return res;
         }
-    
+        
+
+        public static int [] mergeSort(int [] v){
+            int [] vr, ve, vd;
+            int meio;
+
+            if(v.length<2){
+                return v;
+            }
+
+            meio = v.length / 2;
+            ve = vetor_sub(v, 0, meio);
+            vd = vetor_sub(v, meio, v.length);
+
+            vr = merge(mergeSort(ve), mergeSort(vd));
+
+
+
+
+            return vr;
+        }
+
+
+
+
+
+
+    public static int [] vetor_sub (int [] v, int ini, int fim){
+        int [] vr = new int[fim -ini];
+        int i, k=0;
+        for(i=ini;i<fim;i++){
+            vr [k]= v[i];
+            k++;
+        } 
+        
+        
+        
+        return vr;
+    }
 
 
 
@@ -68,7 +112,33 @@ public class booblesort {
     }
 
     public static void main(String[] args) {
-        int [] valores = {94,27,32,46,8,0};
+
+        int i;
+        int [] v1 = {42,13,27,9,2,55,22,94,1,200,0,300};
+        int [] vr = mergeSort(v1);
+
+        for(i=0;i<vr.length;i++){
+            System.out.printf(  "%d ", vr[i] );
+        }
+        System.out.println();
+
+
+
+
+        /*int [] v1 = {5,7,9,11};
+        int [] v2 = {6,10,12,15};
+
+        int [] res = merge(v1, v2);
+        for(int i =0; i<res.length;i++){
+            System.out.printf(" %d ", res[i]);
+        }
+        System.out.println();*/
+
+    }
+
+
+
+        /*int [] valores = {94,27,32,46,8,0};
         int i, j ;
         for(i=0;i<valores.length-1;i++){
             for(j=0;j<valores.length-1-i;j++){
@@ -81,5 +151,5 @@ public class booblesort {
         }
         for(int o =0;o<valores.length;o++){
            System.out.println(valores[o]);}
-    }
-}
+    */
+        }
