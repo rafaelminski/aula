@@ -61,9 +61,32 @@ public class booblesort {
             return vr;
         }
 
+    public static int getValPos(int val,int pos){
+        return (int) (val% (int)Math.pow(10, pos+1)/(int)Math.pow(10, pos));
+    }
 
+public static int[] countingSortPos (int[] v, int pos){
+    int[] saida = new int[v.length];
+    int[] count = new int[10];
+    int i, val_pos,val;
+    for(i=0; i<v.length;i++){
+        val = v[i];
+        val_pos = getValPos(val, pos);
+        count[val_pos]++;
+    }
+    for(i=1;i<count.length;i++){
+        count[i]+=count[i-1];
+    }
 
-
+    for(i=v.length-1;i>0;i--){
+        val = v[i];
+        val_pos = getValPos(val, pos);
+        count[val_pos]--;
+        saida[count[val_pos]] = val;
+    }
+    
+    return saida;
+}
 
 
     public static int [] vetor_sub (int [] v, int ini, int fim){
